@@ -13,6 +13,7 @@ class BillingInfo extends React.Component {
         <div>CVV: <input type="text"></input></div>
         <div>Expiration Date: <input type="text"></input></div>
         <div>Billing Zip Code: <input type="text"></input></div>
+        <button onClick={() => {this.props.handleClick('checkout');}}>Purchase</button>
       </div>
     )
   }

@@ -15,6 +15,7 @@ class AccountCreation extends React.Component {
         <div>State: <input type="text"></input></div>
         <div>Zip Code: <input type="text"></input></div>
         <div>Phone #: <input type="text"></input></div>
+        <button onClick={() => {this.props.handleClick('shipping')}}>Next</button>
       </div>
     )
   }
