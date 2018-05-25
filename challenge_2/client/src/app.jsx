@@ -11,10 +11,12 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      page: 'checkout'
+      page: 'checkout',
+      username: ''
     }
 
-    this.changePage.bind(this);
+    this.changePage = this.changePage.bind(this);
+    this.setUserName = this.setUserName.bind(this);
   }
 
   changePage(page) {
@@ -23,14 +25,20 @@ class App extends React.Component {
     });
   }
 
+  setUserName(username) {
+    this.setState({
+      username: username
+    });
+  }
+
   render() {
     let page;
     if (this.state.page === 'acctCreate') {
-      page = <AccountCreation handleClick={this.changePage} />;
+      page = <AccountCreation handleClick={this.changePage} setUserName={this.setUserName} />;
     } else if (this.state.page === 'shipping') {
-      page = <ShippingInfo handleClick={this.changePage} />;
+      page = <ShippingInfo handleClick={this.changePage} username={this.state.username}/>;
     } else if (this.state.page === 'billing') {
-      page = <BillingInfo handleClick={this.changePage} />;
+      page = <BillingInfo handleClick={this.changePage} username={this.state.username}/>;
     } else if (this.state.page === 'checkout') {
       page = <button onClick={() => {this.changePage('acctCreate');}}>Checkout</button>;
     }
