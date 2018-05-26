@@ -1,0 +1,24 @@
+{
+  "name": "redux_minesweeper",
+  "version": "1.0.0",
+  "description": "minesweeper implmented with react and redux",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rjgcabrera/hrsf92-mini-apps-2/tree/master/challenge_3"
+  },
+  "keywords": [
+    "minesweeper",
+    "react",
+    "redux"
+  ],
+  "author": "Raymond Cabrera",
+  "license": "ISC",
+  "dependencies": {
+    "create-react-app": "^1.5.2"
+  }
+}
