@@ -1,0 +1,30 @@
+ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+header, footer{
+  text-align: center;
+}
+
+#search-bar {
+  text-align: center;
+}
+
+.place {
+  font-weight: bold;
+}
+
+.date {
+  font-style: italic;
+}
+
+.event-list-item {
+  /* margin: 1em 0; */
+  padding: 1em 0;
+  margin: auto;
+  width: 80%;
+  text-align: center;
+  border-bottom: 1px solid lightgrey;
+}

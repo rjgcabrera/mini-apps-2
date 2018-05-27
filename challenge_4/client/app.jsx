@@ -41,12 +41,14 @@ class App extends React.Component {
               this.setState({
                 page: 1,
                 result: response.data
+              }, () => {
+                $('input').val('');
               });
-              $('#searchInput').val('');
+              // $('#searchInput').val('');
             })
               .catch(err => {
                 console.log('get req error: ', err);
-                $('#searchInput').val('');
+                $('input').val('');
               });
         });
       })
@@ -75,7 +77,6 @@ class App extends React.Component {
       .then(response => {
         console.log('get req success: ', response);
         this.setState({
-          page: 1,
           result: response.data
         });
         $('#searchInput').val('');
@@ -90,8 +91,10 @@ class App extends React.Component {
 
     return(
     <div id="main-div">
-      <input type="text" id="searchInput" onChange={this.handleChange}></input>
-      <button onClick={this.searchEvents}>Search</button>
+      <div id="search-bar">
+        <input type="text" onChange={this.handleChange}></input>
+        <button onClick={this.searchEvents}>Search</button>
+      </div>
       <EventList events={this.state.result} />
       <ReactPaginate
         className="pagination"
